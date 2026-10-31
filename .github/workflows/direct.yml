@@ -1,0 +1,37 @@
+name: Claudin direct (responde CLAUDIN)
+on:
+  schedule:
+    - cron: '*/5 * * * *'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: direct
+  cancel-in-progress: false
+jobs:
+  responder:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Responder comentários
+        env:
+          IG_TOKEN: ${{ secrets.IG_TOKEN }}
+        run: python3 direct/responder.py
+      - name: Renovar validade do token (1x por semana, domingo)
+        if: github.event.schedule == '*/5 * * * *'
+        env:
+          IG_TOKEN: ${{ secrets.IG_TOKEN }}
+        run: |
+          if [ "$(date -u +%u%H%M)" \> "70300" ] && [ "$(date -u +%u%H%M)" \< "70306" ]; then
+            curl -s -o /dev/null "https://graph.instagram.com/refresh_access_token?grant_type=ig_refresh_token&access_token=$IG_TOKEN" || true
+          fi
+      - name: Salvar quem já foi respondido
+        run: |
+          if ! git diff --quiet direct/respondidos.json; then
+            git config user.name "claudin-bot"
+            git config user.email "bot@users.noreply.github.com"
+            git add direct/respondidos.json
+            git commit -m "direct: respostas [skip ci]"
+            git push
+          fi
