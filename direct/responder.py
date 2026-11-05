@@ -42,8 +42,12 @@ def norm(s):
     return s
 
 
-def pediu(texto):
-    return re.search(r'\bclaud[ií]n\w*|\bclaudim\b', norm(texto)) is not None
+def pediu(texto, palavras=()):
+    """Aceita CLAUDIN sempre + a(s) palavra(s) que o vídeo pediu (ctas.json → "palavras"), sem ligar pra maiúscula/acento."""
+    t = norm(texto)
+    if re.search(r'\bclaud[ií]n\w*|\bclaudim\b', t):
+        return True
+    return any(re.search(r'\b' + re.escape(norm(p)) + r'\w{0,2}\b', t) for p in palavras if p)
 
 
 def main():
@@ -71,7 +75,7 @@ def main():
                 break
             for c in res.get('data', []):
                 cid = c['id']
-                if cid in feitos or c.get('username') == eu or not pediu(c.get('text', '')):
+                if cid in feitos or c.get('username') == eu or not pediu(c.get('text', ''), info.get('palavras', [])):
                     continue
                 ts = datetime.strptime(c['timestamp'], '%Y-%m-%dT%H:%M:%S%z')
                 if ts < limite:

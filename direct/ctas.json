@@ -3,36 +3,48 @@
   "titulo": "Apresentação do Claudin (pixel)",
   "cta": true,
   "mensagem": "Oi! Valeu por comentar 🧡 Aqui ficam todos os passo a passo das dicas: https://claudin30segundos.github.io/ — me conta qual dica você quer que eu faça!",
-  "resposta_publica": "Te mandei no direct! 🧡"
+  "resposta_publica": "Te mandei no direct! 🧡",
+  "palavras": []
  },
  "18135799534578686": {
   "titulo": "Dica #1 · Projetos: pare de explicar tudo do zero (pixel)",
   "cta": true,
   "mensagem": "Opa! Aqui tá o passo a passo que eu prometi 🧡 https://claudin30segundos.github.io/projetos/ — qualquer dúvida, me chama aqui!",
-  "resposta_publica": "Te mandei no direct! 🧡"
+  "resposta_publica": "Te mandei no direct! 🧡",
+  "palavras": []
  },
  "18024963560941681": {
   "titulo": "Dica #4 · Diga o formato da resposta",
   "cta": true,
   "mensagem": "Opa! Aqui tá a lista dos formatos que eu mais uso, com exemplos 🧡 https://claudin30segundos.github.io/formatos/ — qualquer dúvida, me chama aqui!",
-  "resposta_publica": "Te mandei no direct! 🧡"
+  "resposta_publica": "Te mandei no direct! 🧡",
+  "palavras": []
  },
  "18092155016690446": {
   "titulo": "Skills do Claude #1 · O que é uma skill",
   "cta": true,
   "mensagem": "Opa! Aqui tá a página sobre Skills do Claude, com os links oficiais 🧡 https://claudin30segundos.github.io/skills/ — segue que a parte 2 já tá vindo!",
-  "resposta_publica": "Te mandei no direct! 🧡"
+  "resposta_publica": "Te mandei no direct! 🧡",
+  "palavras": [
+   "SKILL"
+  ]
  },
  "18176033011457275": {
   "titulo": "Dica #7 · Artefatos: sua ideia vira app",
   "cta": true,
   "mensagem": "Opa! Aqui tá o passo a passo dos Artefatos do Claude 🧡 https://claudin30segundos.github.io/artefatos/",
-  "resposta_publica": "Te mandei no direct! 🧡"
+  "resposta_publica": "Te mandei no direct! 🧡",
+  "palavras": [
+   "APP"
+  ]
  },
  "18159029155516899": {
   "titulo": "Skills do Claude #4 · Crie a sua skill",
   "cta": true,
   "mensagem": "Opa! Aqui tá o passo a passo pra criar a sua skill, com modelo do SKILL.md e PDF 🧡 https://claudin30segundos.github.io/criar-skill/ — segue que a parte 5 já tá vindo!",
-  "resposta_publica": "Te mandei no direct! 🧡"
+  "resposta_publica": "Te mandei no direct! 🧡",
+  "palavras": [
+   "SKILL"
+  ]
  }
 }
