@@ -3,6 +3,9 @@ on:
   schedule:
     - cron: '*/20 * * * *'      # só pra garantir que sempre tem um plantão ativo
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['direct/vigia.sh', 'direct/ctas.json', '.github/workflows/direct.yml']
 permissions:
   contents: write
 concurrency:
